@@ -1,0 +1,19 @@
+{
+  "name": "push-deploy",
+  "version": "1.0.0",
+  "description": "deploy app for git web hook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "push",
+    "git",
+    "deploy"
+  ],
+  "author": "kubrey.work@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.15.3"
+  }
+}
