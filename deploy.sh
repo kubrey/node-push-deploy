@@ -14,7 +14,7 @@ rep=$3
 files=$4
 container=$5
 now=`date +%Y-%m-%d:%H:%M:%S`
-echo "" >> deploy.log
+echo "----------DEPLOY START-----------" >> deploy.log
 echo "start deploy $now..." >> deploy.log
 
 cd $rep
@@ -28,6 +28,7 @@ docker exec -it $container composer update >> deploy.log
 
 nowUpdate=`date +%Y-%m-%d:%H:%M:%S`
 echo "$nowUpdate Deployed branch: $branch Commit: $commitHash\n" >> deploy.log
+echo "----------DEPLOY END-----------" >> deploy.log
 
 if [[ files -ne '' ]]
 then
