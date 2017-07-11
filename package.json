@@ -15,5 +15,10 @@
   "license": "ISC",
   "devDependencies": {
     "express": "^4.15.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "method-override": "^2.3.9",
+    "nconf": "^0.8.4"
   }
 }

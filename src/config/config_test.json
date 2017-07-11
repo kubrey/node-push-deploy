@@ -1,0 +1,13 @@
+{
+  "server":{
+    "port":8010
+  },
+  "docker": {
+    "container": "applead_web"
+  },
+  "git": {
+    "repo_dir":"/var/www/applead/data/www/applead",
+    "work_dir":"/var/www/applead/data/www/applead",
+    "branch": "advanced-dev"
+  }
+}
