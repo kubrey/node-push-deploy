@@ -6,8 +6,8 @@
     "container": "applead_web"
   },
   "git": {
-    "repo_dir":"/var/www/applead/data/www/applead",
-    "work_dir":"/var/www/applead/data/www/applead",
+    "repo_dir":"/home/kubrey/www/data/applead/data/www/dev.applead.loc",
+    "work_dir":"/home/kubrey/www/data/applead/data/www/dev.applead.loc",
     "branch": "advanced-dev"
   }
 }

@@ -24,8 +24,8 @@ git --work-tree=$workingDir checkout -f $branch
 commitHash=`git rev-parse --short HEAD`
 cd $currdir
 sleep 2
-docker exec -it $container ./yii migrate --interactive=0 >> deploy.log
-#docker exec -it $container composer update >> deploy.log
+docker exec -it $container ./yii migrate --interactive=0 >> deploy.log 2>&1
+#docker exec -it $container composer install >> deploy.log
 
 nowUpdate=`date +%Y-%m-%d:%H:%M:%S`
 echo "$nowUpdate Deployed branch: $branch Commit: $commitHash\n" >> deploy.log
