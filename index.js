@@ -49,7 +49,7 @@ app.post('/deploy', function (req, res) {
     }
 
     if(req.body.push === undefined){
-        logger.log('error', "Empty body - no push; " + util.inspect(req.body, false, null));
+       // logger.log('error', "Empty body - no push; " + util.inspect(req.body, false, null));
         res.status(400).send('Invalid body.');
         return;
     }
@@ -58,7 +58,7 @@ app.post('/deploy', function (req, res) {
 
     let newChanges = req.body.push.changes;
     if (newChanges === undefined) {
-        logger.log('error', "No changes: " + util.inspect(req.body.push, false, null));
+        //logger.log('error', "No changes: " + util.inspect(req.body.push, false, null));
         res.status(400).send('No changes');
         return;
     }
@@ -77,7 +77,9 @@ app.post('/deploy', function (req, res) {
 
     if (update) {
         logger.log('info', "Update:" + util.inspect(req.headers, false, null));
-        require('child_process').spawn('/bin/bash', shellOptions, {stdio: 'inherit'});
+         require('child_process').spawn('/bin/bash', shellOptions, {stdio: 'inherit'}).stderr.on('data', (data) => {
+            logger.log('error', util.inspect(data, false, null));
+        });
     } else {
         logger.log('error', "No update; " + util.inspect(newChanges, false, null));
     }
