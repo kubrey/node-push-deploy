@@ -77,7 +77,7 @@ app.post('/deploy', function (req, res) {
 
     if (update) {
         logger.log('info', "Update:" + util.inspect(req.headers, false, null));
-         let child = require('child_process').spawn('/bin/bash', shellOptions, {stdio: 'inherit'});
+         let child = require('child_process').spawn('/bin/bash', shellOptions);
          child.stderr.on('data', (data) => {
             logger.log('error', util.inspect(data, false, null));
         });
